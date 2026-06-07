@@ -1,0 +1,1 @@
+{"name":"Local: TRR1_4008","url":"c:\\Users\\XIAOXIN'\\Documents\\TRR\\CODE\\TRR1_4008.cpp","tests":[{"id":1780752492735,"input":"4\n8 1 8 9\n7 4 9 2\n1 9 5 8\n7 8 2 9","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\XIAOXIN'\\Documents\\TRR\\CODE\\TRR1_4008.cpp","group":"local","local":true}
