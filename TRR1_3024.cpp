@@ -1,3 +1,10 @@
+//author: nhatdevzizi
+
+/* Phiêu du dòng code, mộng đời trai
+Nhật gửi lòng mình giữa sớm mai.
+Chẳng ngại sương mờ vây thuật toán
+Vất vả một thuở, rạng tương lai. */
+
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
