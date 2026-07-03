@@ -1,40 +1,38 @@
+//author: nhatdevzizi
+
+/* Phiêu du dòng code, mộng đời trai
+Nhật gửi lòng mình giữa sớm mai.
+Chẳng ngại sương mờ vây thuật toán
+Vất vả một thuở, rạng tương lai. */
+
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
+#define ll long long
+#define endl '\n'
+#define pb push_back
+#define all(x) x.begin(),x.end()
+#define boost ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0)
+const int MOD = 1e9 + 7;
 
-void solve() {
-    int n, k;
+ll arr[1000005];
+ll n, k, a, b, x, y, l, r;
+
+int32_t main(){
+    boost;
     cin >> n >> k;
-    vector<vector<ll>> dp(n + 1, vector<ll>(k, 0));
-    dp[1][0] = 1; 
-    if (k > 1) {
-        dp[1][1] = 1; 
-    }
-    for (int i = 2; i <= n; ++i) {
-        for (int j = 0; j < k; ++j) {
-            dp[i][0] += dp[i - 1][j];
+    vector<ll> dp(n+2,0);
+    dp[0] = 1;
+    for(int i = 1; i <= n; ++i){
+        if(i < k){
+            dp[i] = (1LL << i);
         }
-        for (int j = 1; j < k; ++j) {
-            dp[i][j] = dp[i - 1][j - 1];
+        else if(i == k) dp[i] = ((1ll << i) - 1);
+        else {
+            for(int j = 1; j <= k; ++j){
+                dp[i] += dp[i-j];
+            }
         }
     }
-    ll ans = 0;
-    for (int j = 0; j < k; ++j) {
-        ans += dp[n][j]; 
-    }
-
-    ll total = 0;
-    for (int j = 0; j < k; ++j) {
-        total += dp[n][j];
-    }
-
-    cout << total << endl;
-}
-
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    solve();
+    cout << dp[n] << endl;
     return 0;
 }
