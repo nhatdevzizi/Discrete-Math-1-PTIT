@@ -5,6 +5,8 @@ Nhật gửi lòng mình giữa sớm mai.
 Chẳng ngại sương mờ vây thuật toán
 Vất vả một thuở, rạng tương lai. */
 
+//Update July 2026: CODEPTIT bị lỗi bài này, muốn AC cần nộp bài TRR1_5001.cpp vào bài TRR1_5005.
+
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
