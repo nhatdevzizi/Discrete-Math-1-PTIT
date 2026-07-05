@@ -17,21 +17,6 @@ vector<int> v;
 ll n, k,s, a, b, x, y, l, r;
 int res = 0, sum  =0;
 
-// void backtrack(int pos, int sum){
-//     if(sum > s) return;
-//     if(pos == n){
-//         if(sum == s){
-//             res++;
-//             return;
-//         }
-//         else return;
-//     }
-//     for(int i = 0; i <= 1; ++i){
-//         arr[pos] = i;
-//         backtrack(pos + 1, sum + i);
-//     }
-// }
-
 ll C(ll n, ll k){
     if(k > n) return 0;
     k = min(k, n-k);
