@@ -15,32 +15,28 @@ const int MOD = 1e9 + 7;
 ll arr[1000005];
 ll n;
 
+void euler(ll n, vector<ll>& phi){
+    for (int i = 0; i <= n; ++i){
+        phi[i] = i;
+    }
+    for (int i = 2; i <= n; ++i){
+        if (phi[i] == i){
+            for (int j = i; j <= n; j += i){
+                phi[j] -= phi[j] / i;
+            }
+        }
+    }
+}
+
 int32_t main(){
     boost;
     cin >> n;
-    vector<bool> isPrime(n + 1, true);
-    vector<int> prime;
-    vector<int> phi(n + 1);
-    int res = 1;
-    phi[1] = 1;
-    for(int i = 2; i <= n; ++i){
-        if(isPrime[i]){
-            prime.push_back(i);
-            phi[i] = i- 1;
-        }
-        for(auto p : prime){
-            if(i * p > n) break;
-            isPrime[i * p] = false;
-            if(i % p == 0){
-                phi[i*p] = phi[i] * p;
-                break; 
-            }
-            else phi[i*p] = phi[i] * (p-1);
-        }
+    vector<ll> phi(n + 2, 0);
+    euler(n, phi);
+    ll t = 1;
+    for (int b = 1; b <= n; ++b){
+        t += phi[b];
     }
-    for(int i = 1; i <= n; ++i){
-        res += phi[i];
-    }
-    cout << res;
+    cout << t << endl;
     return 0;
 }
